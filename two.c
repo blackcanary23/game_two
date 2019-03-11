@@ -24,11 +24,11 @@ int iter_method()
 	gamer_B* ptrObjB = &objB;
 	float game_number;
 
-
+	printf("\n\n%s", "2. Численное решение:");
 	for (SIZE = 3, N = 2; SIZE < 12, N < 11; SIZE++, N++)
 	{
-		printf("\n\n");
-
+		//printf("\n\n");
+		printf("\n\n%s %d\n\n", "N = ", N);
 
 		ptrObjA->strategy_number_of_A = 1; // пусть стратегия игрока А равна 1
 		game_number = 1;
@@ -158,28 +158,25 @@ int iter_method()
 			}
 			while (accuracy > 0.0001);
 
-			/*temp = fabs(average_price);
-			average_price = matrix[0][0];
-			value_a = fabs(fabs(average_price) - temp);
+			
+			temp_a = fabs(matrix[0][0]);
 			for (int i = 0; i < SIZE; i++)
 			{
-				for (int j = 0; j < SIZE; j++)
+				for (int j = 1; j < SIZE; j++)
 				{
-					average_price = matrix[i][j];
-					value_b = fabs(fabs(average_price) - temp);
-					if (value_b < value_a)
+					temp_b = fabs(matrix[i][j]);
+					if (fabs(temp_b - fabs(average_price)) < fabs(temp_a - fabs(average_price))) 
 					{
-						value_a = fabs(fabs(value_b) - temp);
-						average_price = matrix[i][j];
-						//row = i; 
-						//column = j;
-						//printf("hi");
-					}	
+						price = matrix[i][j];
+						temp_a = fabs(matrix[i][j]);
+						row = i;
+						column = j;
+					}
 				}
-			}*/
+			}
 
-			printf("%s %.3f", "H = ", average_price);
-			//printf("%s %.3f", "H = ", av_price);*/
+
+			printf("%s %.3f %.3f %.3f", "H = ", row / N, column / N, price);
 		} 
 
 		for (int k = 0; k < SIZE; k++)
@@ -193,7 +190,6 @@ int iter_method()
 		free(loss_of_B);
 		free(win_of_A);
 	}
-
 
 
 	return 0;
