@@ -144,20 +144,3 @@
 	}
 	
 
-
-int main()
-{
-	system("chcp 1251");
-	system("cls");
-	
-	display();
-	derivative();
-	equation();
-	decision();
-
-	iter_method();
-
-
-	_getch();
-	return 0;
-}
