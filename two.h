@@ -4,8 +4,7 @@
 float low_price, up_price; 
 float row, column;
 
-float temp, value_a, value_b;
-float lower_price, upper_price, average_price, accuracy;
-//int r, c;
+float temp_a, temp_b;
+float lower_price, upper_price, average_price, accuracy, price;
 
 #endif
